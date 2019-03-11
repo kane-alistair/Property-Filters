@@ -1,27 +1,40 @@
 import React, { Component } from 'react';
+import PropertyContainer from './containers/PropertyContainer';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  state = {
+    properties: [{
+      "location": "London",
+      "numberOfBeds": "4",
+      "numberOfBathrooms": "1",
+      "price": "750000",
+      "numberOfKitchens": "5"
+    },
+    {
+      "location": "Glasgow",
+      "numberOfBeds": "2",
+      "numberOfBathrooms": "2",
+      "price": "400000"
+    },
+    {
+      "location": "Manchester",
+      "numberOfBeds": "8",
+      "numberOfBathrooms": "1",
+      "price": "200000"
+    },
+    {
+      "location": "Edinburgh",
+      "numberOfBeds": "4",
+      "numberOfBathrooms": "1",
+      "price": "450000",
+      "gardens": "5"
+    }],
+  }
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+    return(<PropertyContainer properties={this.state.properties} /> )
   }
 }
 
